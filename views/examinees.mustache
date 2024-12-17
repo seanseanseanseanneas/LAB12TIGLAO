@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Examinees</title>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css" />
+    
+    <style>
+        body {
+            background-color: #e0f7fa; /* Light background for consistency */
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            margin: 0;
+            padding-top: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+        .main__container {
+            width: 100%;
+            max-width: 800px; /* Set a maximum width for better readability */
+            margin: auto;
+            padding: 40px;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+        }
+        h2 {
+            text-align: center;
+            color: #00796b;
+            margin-bottom: 20px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        th, td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        th {
+            background-color: #f2f2f2;
+            color: #555;
+        }
+        tr:hover {
+            background-color: #f5f5f5;
+        }
+        .export-btn {
+            display: inline-block;
+            background-color: #00796b;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            padding: 8px 12px;
+            text-decoration: none;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .export-btn:hover {
+            background-color: #004d40;
+        }
+    </style>
+</head>
+<body>
+    <div class="main__container">
+        <h2>Exam Attempts</h2>
+        
+        <table>
+            <thead>
+                <tr>
+                    <th>Exam Attempt Date</th>
+                    <th>Examinee Name</th>
+                    <th>Exam Items</th>
+                    <th>Total Score</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                {{#examAttempts}}
+                    <tr>
+                        <td>{{ attempt_date }}</td>
+                        <td>{{ complete_name }}</td>
+                        <td>{{ exam_number_of_items }}</td>
+                        <td>{{ total_score }}</td>
+                        <td>
+                            <a href="/exam-attempts/{{ id }}" class="export-btn">Export to PDF</a>
+                        </td>
+                    </tr>
+                {{/examAttempts}}
+            </tbody>
+        </table>
+        
+    </div>
+</body>
+</html>

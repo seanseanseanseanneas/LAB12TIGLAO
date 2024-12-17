@@ -1,0 +1,59 @@
+{
+  "questions": [
+    {
+      "item_number": "1",
+      "question": "What is the main goal of Integrative Programming and Technologies (IPT)?",
+      "choices": [
+        "A) Streamlining programming processes",
+        "B) Unifying various coding languages and tools",
+        "C) Focusing solely on mobile app development",
+        "D) Enhancing data visualization techniques"
+      ],
+      "correct_answer": "B"
+    },
+    {
+      "item_number": "2",
+      "question": "What is a significant advantage of using IPT?",
+      "choices": [
+        "A) Improved collaboration among teams",
+        "B) Greater innovation through diverse technologies",
+        "C) Cost savings in development",
+        "D) All of the above"
+      ],
+      "correct_answer": "D"
+    },
+    {
+      "item_number": "3",
+      "question": "Which programming approach is frequently incorporated in IPT?",
+      "choices": [
+        "A) Event-driven programming",
+        "B) Declarative programming",
+        "C) Modular programming",
+        "D) All of the above"
+      ],
+      "correct_answer": "D"
+    },
+    {
+      "item_number": "4",
+      "question": "What function do web services serve in Integrative Programming and Technologies?",
+      "choices": [
+        "A) They improve code readability.",
+        "B) They facilitate data exchange between applications.",
+        "C) They optimize user authentication.",
+        "D) They manage application deployment."
+      ],
+      "correct_answer": "B"
+    },
+    {
+      "item_number": "5",
+      "question": "Which framework is commonly utilized in IPT for enhancing application performance?",
+      "choices": [
+        "A) Microservices architecture",
+        "B) Static site generators",
+        "C) Content management systems",
+        "D) Traditional monolithic architecture"
+      ],
+      "correct_answer": "A"
+    }
+  ]
+}

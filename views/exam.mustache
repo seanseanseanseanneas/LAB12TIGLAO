@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exam</title>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css" />
+    <style>
+        body {
+            background-color: #e0f7fa;
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #263238;
+        }
+        .main__container {
+            width: 100%;
+            max-width: 600px; /* Set a wider max width */
+            padding: 40px;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+            text-align: center;
+        }
+        h2 {
+            font-size: 28px;
+            margin-bottom: 10px;
+            color: #00796b;
+        }
+        h3 {
+            font-size: 20px;
+            margin-bottom: 30px;
+            color: #546e7a;
+        }
+        form {
+            text-align: left; /* Align form elements to the left */
+            display: flex;
+            flex-direction: column;
+            gap: 15px; /* Space between choices */
+        }
+        label {
+            font-weight: normal;
+        }
+        button {
+            padding: 12px;
+            background: #00796b;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        button:hover {
+            background: #004d40;
+        }
+    </style>
+</head>
+<body>
+    <div class="main__container">
+        <h2>Question #{{ item_number }}</h2>
+        <h3>{{ question }}</h3>
+
+        <div>
+            Choices: <br>
+            <form action="/exam" method="POST">
+                <input type="hidden" name="item_number" value="{{ item_number }}" />
+                {{#choices}}
+                    <label>
+                        <input type="radio" name="answer" value="{{ letter }}" required />
+                        {{ choice }}
+                    </label>
+                    <br>
+                {{/choices}}
+
+                <button type="submit">NEXT</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

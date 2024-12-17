@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exam Attempt Details</title>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css" />
+    
+    <style>
+        body {
+            background-color: #e0f7fa; /* Light background for consistency */
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            margin: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh; /* Ensure full height */
+            overflow-y: auto; /* Enable vertical scrolling */
+        }
+        .main__container {
+            width: 100%;
+            max-width: 800px; /* Set a maximum width for better readability */
+            max-height: 90vh; /* Limit height for scrolling */
+            margin: auto;
+            padding: 20px; /* Reduced padding for better fit */
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+            overflow-y: auto; /* Allow scrolling within the container */
+        }
+        h2 {
+            text-align: center;
+            color: #00796b;
+        }
+        .details {
+            margin-top: 20px;
+        }
+        .details p {
+            font-size: 1.1em;
+            color: #555;
+        }
+        .questions {
+            margin-top: 20px;
+        }
+        .questions h3 {
+            color: #333;
+        }
+        .question {
+            background: #f2f2f2;
+            border-radius: 5px;
+            padding: 15px;
+            margin-bottom: 15px;
+        }
+        .choices {
+            margin-top: 10px;
+        }
+        .score {
+            font-weight: bold;
+            color: #007bff;
+        }
+        .back-btn {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 12px 20px;
+            background-color: #00796b;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            text-decoration: none;
+            text-align: center;
+            transition: background-color 0.3s;
+        }
+        .back-btn:hover {
+            background-color: #004d40;
+        }
+    </style>
+</head>
+<body>
+    <div class="main__container">
+        <h2>Exam Attempt Details</h2>
+
+        <div class="details">
+            <p><strong>Examinee Name:</strong> {{ complete_name }}</p>
+            <p><strong>Email:</strong> {{ email }}</p>
+            <p><strong>Exam Attempt Date:</strong> {{ attempt_date }}</p>
+            <p class="score"><strong>Total Score:</strong> {{ total_score }}</p>
+        </div>
+
+        <div class="questions">
+            <h3>Questions and Answers</h3>
+            {{#questions}}
+                <div class="question">
+                    <p><strong>Question:</strong> {{ question }}</p>
+                    <div class="choices">
+                        <strong>Your Answer:</strong> {{ user_answer }}<br>
+                        <strong>Choices:</strong><br>
+                        {{#choices}}
+                            <label>
+                                <input type="radio" disabled {{#is_correct}}checked{{/is_correct}} /> {{ choice }}
+                            </label><br>
+                        {{/choices}}
+                    </div>
+                </div>
+            {{/questions}}
+        </div>
+
+        <a href="/examinees" class="back-btn">Back to Examinees</a>
+    </div>
+</body>
+</html>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Form</title>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css" />
+    <style>
+        body {
+            background-color: #e0f7fa;
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #263238;
+        }
+        .main__container {
+            width: 100%;
+            max-width: 600px; /* Set a wider max width */
+            padding: 40px;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+            text-align: center;
+        }
+        h2 {
+            font-size: 28px;
+            margin-bottom: 20px;
+            color: #00796b;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            text-align: left; /* Align labels and inputs to the left */
+        }
+        label {
+            font-weight: bold;
+        }
+        input {
+            padding: 12px;
+            border: 1px solid #b0bec5;
+            border-radius: 6px;
+            font-size: 16px;
+            width: 100%; /* Ensure inputs are full width */
+        }
+        input:focus {
+            border-color: #00796b;
+            outline: none;
+        }
+        button {
+            padding: 12px;
+            background: #00796b;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        button:hover {
+            background: #004d40;
+        }
+    </style>
+</head>
+<body>
+    <div class="main__container">
+        <h2>Login Form</h2>
+
+        <form action="/login" method="POST">
+            <div>
+                <label for="email">Email Address <span style="color: red">*</span></label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            
+            <div>
+                <label for="password">Password <span style="color: red">*</span></label>
+                <input type="password" id="password" name="password" required>
+            </div>
+    
+            <div>
+                <button type="submit">Login</button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
